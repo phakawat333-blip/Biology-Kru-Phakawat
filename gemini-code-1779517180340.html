@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชีววิทยา ม.4 เข้มข้น | Kru Bio 101</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark: #050811; --glass-card: rgba(13, 22, 42, 0.6); --glass-border: rgba(255, 255, 255, 0.06); --bio-green: #00ff88; --tech-blue: #00e5ff; --text-white: #f8fafc; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Prompt', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-white); padding-top: 80px; }
+        
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(5, 8, 17, 0.75); backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; }
+        nav .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--bio-green), var(--tech-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav .nav-links { display: flex; gap: 20px; list-style: none; }
+        nav .nav-links a { color: var(--text-white); text-decoration: none; padding: 8px 16px; border-radius: 8px; transition: 0.3s; }
+        nav .nav-links a:hover, nav .nav-links a.active { background: rgba(0, 229, 255, 0.1); color: var(--tech-blue); }
+
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .playlist-card { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; text-align: center; }
+        .vdo-container { position: relative; width: 100%; padding-top: 56.25%; background: #000; border-radius: 16px; overflow: hidden; margin-bottom: 30px; }
+        .vdo-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        h1 { font-size: 2rem; font-weight: 600; margin-bottom: 10px; }
+        h2 { color: var(--tech-blue); font-size: 1.2rem; font-weight: 400; margin-bottom: 20px; }
+        p { color: #94a3b8; line-height: 1.8; margin-bottom: 30px; }
+        
+        .btn-link { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, var(--tech-blue), var(--bio-green)); color: #050811; font-weight: 600; text-decoration: none; border-radius: 12px; transition: 0.3s; }
+        .btn-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,229,255,0.3); }
+
+        footer { background: #03050a; padding: 30px; text-align: center; color: #475569; font-size: 0.9rem; margin-top: 100px; border-top: 1px solid var(--glass-border); }
+        @media(max-width: 768px) { nav .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-dna"></i> KRUBIO 101</div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="m6.html">ชีววิทยา ม.6</a></li>
+            <li><a href="m4.html" class="active">ชีววิทยา ม.4</a></li>
+            <li><a href="biography.html">Biography</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="playlist-card">
+            <div class="vdo-container">
+                <iframe src="https://www.youtube.com/embed?videoseries&list=PLf8I2SNTK0HUsxznIhn3OZ_Bqtf4Y2yHy" allowfullscreen></iframe>
+            </div>
+            <h1>วิชาชีววิทยาเข้มข้น ม.4 เทอม 1</h1>
+            <h2>คอร์สเรียนปรับพื้นฐานวิทยาศาสตร์แบบเจาะลึก</h2>
+            <p>ยินดีต้อนรับนักเรียนชั้น ม.4 เข้าสู่ระบบการเรียนรู้ชีววิทยาออนไลน์ คุณสามารถกดสลับบทเรียนเพื่อทบทวนหัวข้อต่าง ๆ ภายในชุดวิดีโอของระบบเพลย์ลิสต์นี้ได้โดยตรงตลอดเวลาครับ</p>
+            <a href="https://www.youtube.com/playlist?list=PLf8I2SNTK0HUsxznIhn3OZ_Bqtf4Y2yHy" target="_blank" class="btn-link">
+                <i class="fa-brands fa-youtube"></i> ติดตามคอร์สเรียนนี้บน YouTube ↗
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 ครูภควัต สองเมือง. Powered by GitHub Pages</p>
+    </footer>
+
+</body>
+</html>

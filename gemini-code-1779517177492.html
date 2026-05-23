@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชีววิทยา ม.6 | Kru Bio 101</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark: #050811; --glass-card: rgba(13, 22, 42, 0.55); --glass-border: rgba(255, 255, 255, 0.06); --bio-green: #00ff88; --tech-blue: #00e5ff; --text-white: #f8fafc; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Prompt', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-white); padding-top: 80px; }
+        
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(5, 8, 17, 0.75); backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; }
+        nav .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--bio-green), var(--tech-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav .nav-links { display: flex; gap: 20px; list-style: none; }
+        nav .nav-links a { color: var(--text-white); text-decoration: none; padding: 8px 16px; border-radius: 8px; transition: 0.3s; }
+        nav .nav-links a:hover, nav .nav-links a.active { background: rgba(0, 255, 136, 0.1); color: var(--bio-green); }
+
+        .container { max-width: 1300px; margin: 40px auto; padding: 0 20px; }
+        .section-header { font-size: 1.8rem; margin: 40px 0 20px 0; border-left: 5px solid var(--bio-green); padding-left: 15px; display: flex; align-items: center; gap: 10px; }
+        
+        /* Video Display */
+        .vdo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .vdo-card { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 16px; overflow: hidden; transition: 0.3s; }
+        .vdo-card:hover { transform: translateY(-5px); border-color: var(--bio-green); }
+        .vdo-wrapper { position: relative; width: 100%; padding-top: 56.25%; }
+        .vdo-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .vdo-info { padding: 15px; font-size: 0.95rem; text-align: center; }
+
+        /* Download Section */
+        .docs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .doc-item { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
+        .doc-item:hover { background: rgba(0, 255, 136, 0.05); border-color: rgba(0,255,136,0.3); }
+        .doc-title { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: #cbd5e1; }
+        .doc-title i { color: #ef4444; }
+        .btn-dl { color: var(--tech-blue); text-decoration: none; border: 1px solid rgba(0,229,255,0.3); padding: 4px 12px; border-radius: 6px; font-size: 0.85rem; transition: 0.2s; }
+        .btn-dl:hover { background: var(--tech-blue); color: #000; }
+        
+        .mega-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(135deg, var(--bio-green), var(--tech-blue)); color: #050811; text-decoration: none; font-weight: 600; padding: 20px; border-radius: 16px; font-size: 1.2rem; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,255,136,0.2); transition: 0.3s; }
+        .mega-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,255,136,0.4); }
+
+        footer { background: #03050a; padding: 30px; text-align: center; color: #475569; font-size: 0.9rem; margin-top: 80px; }
+        @media(max-width: 768px){ nav .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-dna"></i> KRUBIO 101</div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="m6.html" class="active">ชีววิทยา ม.6</a></li>
+            <li><a href="m4.html">ชีววิทยา ม.4</a></li>
+            <li><a href="biography.html">Biography</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <h2 class="section-header"><i class="fa-solid fa-circle-play"></i> VDO การสอนชีววิทยา ม.6 ภาคเรียนที่ 1</h2>
+        <div class="vdo-grid">
+            <!-- คลิปที่ 1 ถึง 14 -->
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/Nclti0ZlTqM" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 1</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/kXfqU2PpQzc" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 2</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/Yd75INrq7Wo" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 3</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/c7POhO6T4Qc" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 4</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/4ELF7n64P5k" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 5</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/gqymROT2eFU" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 6</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/0JIKPPpV9WU" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 7</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/pcZoHL_-6Ho" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 8</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/FZ3_XbmNQmQ" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 9</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/0vhXogdLsVk" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 10</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/Ebov09Z8xcg" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 11</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/PRDm4utWdo4" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 12</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/S3bhWBzaCmA" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 13</div></div>
+            <div class="vdo-card"><div class="vdo-wrapper"><iframe src="https://www.youtube.com/embed/vvCV57UN07Q" allowfullscreen></iframe></div><div class="vdo-info">บทเรียน ม.6 — ตอนที่ 14</div></div>
+        </div>
+
+        <h2 class="section-header"><i class="fa-solid fa-file-pdf"></i> 1. เอกสารใบความรู้วิทยาศาสตร์</h2>
+        <div class="docs-grid">
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.1 เซลล์ประสาท</div><a href="https://drive.google.com/file/d/15OX-n9rwcyeO4OpaxXbkvzErM7NfxaMU/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.2 กระแสประสาท</div><a href="https://drive.google.com/file/d/1EeaKryRFWxVWjjASOu2H88q7C515C8yA/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.3 การส่งกระแสประสาท</div><a href="https://drive.google.com/file/d/16lUtvtkHab34EwcOwDoZ2Zhl4b3Qjedx/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.4 ระบบประสาทของสัตว์</div><a href="https://drive.google.com/file/d/1DE4NW4KEyzMWB0jo3SgS-Y2Kw9sGvd9_/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.5 ระบบประสาทส่วนกลาง</div><a href="https://drive.google.com/file/d/1nTIyGzT-QyTa2UP0mUmoi02Zy14JG__4/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.6 ระบบประสาทรอบนอก</div><a href="https://drive.google.com/file/d/17Wc5rdZbEPSxwfPmXcaFRCdvpVGKV1_V/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.7 อวัยวะรับความรู้สึก</div><a href="https://drive.google.com/file/d/1tfyM4kmG2ehnrIA7QTVPOYZgpChG6Emx/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.8 การติดต่อสื่อสารระหว่างเซลล์</div><a href="https://drive.google.com/file/d/1zjhvh6FQ7ipYV10B9kqdLX8qAChlVcGR/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.9 ต่อมใต้สมอง</div><a href="https://drive.google.com/file/d/1PbN0PRSS-FHDu9gOpH_Ot5mKEBQJpJkL/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.10 ต่อไร้ท่ออื่น ๆ</div><a href="https://drive.google.com/file/d/1v-Wb84qphNmlMjqVhIWL7mzwTDeTTryr/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.11 การเคลื่อนไหวของสิ่งมีชีวิต</div><a href="https://drive.google.com/file/d/1yKXbwzHVeD4CwP_rGr2_CbbeGCl8Pqai/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.12 การเคลื่อนไหวของสัตว์มีกระดูก</div><a href="https://drive.google.com/file/d/18gV4KZVuz6JNFM9swf6p1KN2yIenAnmv/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.13 ระบบกล้ามเนื้อ</div><a href="https://drive.google.com/file/d/19AOvEFmjOn_4lFBf2UgEHSIKIHz3wwmd/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.14 ระบบสืบพันธุ์</div><a href="https://drive.google.com/file/d/1ERMYk0LqZ6wmJRQufRFjw8KdfaFKU3SX/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.15 โครงสร้างรอบตัวอ่อน</div><a href="https://drive.google.com/file/d/1HuItkZ61iIEvLs-miCTawCTHV6NySSH9/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+            <div class="doc-item"><div class="doc-title"><i class="fa-solid fa-file-lines"></i> 1.16 พฤติกรรมสัตว์</div><a href="https://drive.google.com/file/d/1viTQEAjMkNfGQ_guBDa5IEGDIoDP0ds2/view?usp=drive_link" target="_blank" class="btn-dl">เปิดดูเอกสาร</a></div>
+        </div>
+
+        <h2 class="section-header"><i class="fa-solid fa-file-powerpoint"></i> 2. โฟลเดอร์รวมสื่อ PowerPoint</h2>
+        <a href="https://drive.google.com/drive/folders/1x5WbH45IFNw9NycP-6mRVbCEbXbXk563?usp=drive_link" target="_blank" class="mega-btn">
+            <i class="fa-solid fa-folder-open"></i> คลิกเปิดคลังสื่อคลังใหญ่ บน Google Drive 💾
+        </a>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ครูภควัต สองเมือง. Powered by GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
