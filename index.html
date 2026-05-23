@@ -3,83 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>คลังสื่อการสอนชีววิทยา (Biology Learning Space)</title>
+    <title>คลังสื่อการสอนชีววิทยา ม.6 ภาคเรียนที่ 1 | Kru Bio 101</title>
+    <!-- ดึง Font และ ไอคอนสากลเพื่อความอลังการ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-dark: #0b0f17;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-neon: #00e676;
+            --secondary-neon: #00b0ff;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans Thai', 'Chakra Petch', sans-serif;
         }
 
         body {
-            background-color: #f4f7f6;
-            color: #2c3e50;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 60px;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, #2e7d32, #155724);
-            color: white;
+        /* พื้นหลังแบบมีแสงออร่าเรืองแสง (Glow Background) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(0,230,118,0.08) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(0,176,255,0.08) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+        }
+
+        /* สไตล์ส่วนหัว (Hero Section) อลังการ */
+        .hero-section {
+            position: relative;
+            padding: 100px 20px 80px 20px;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: radial-gradient(rgba(11, 15, 23, 0.8), var(--bg-dark)), url('https://images.unsplash.com/photo-1532187863486-abf9d39d6618?auto=format&fit=crop&q=80&w=1920') no-repeat center/cover;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: var(--primary-neon);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 600;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .playlist-section {
-            margin-bottom: 50px;
-        }
-
-        .playlist-title {
-            font-size: 1.6rem;
-            color: #1b5e20;
             margin-bottom: 20px;
-            padding-left: 12px;
-            border-left: 5px solid #2e7d32;
-            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* คอนเทนเนอร์คุมระยะ */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--primary-neon);
+        }
+
+        .video-count {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        /* ระบบ Grid วิดีโออัจฉริยะ */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 30px;
         }
 
+        /* การ์ดสไตล์กระจกฝ้า (Glassmorphic Card) */
         .video-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
+        /* เอฟเฟกต์ตอนเลื่อนเมาส์โดนการ์ด */
         .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            border-color: rgba(0, 230, 118, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 230, 118, 0.1);
         }
 
+        /* โซนแสดงผลวิดีโอ อัตราส่วน 16:9 */
         .video-container {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
+            background-color: #000;
         }
 
         .video-container iframe {
@@ -91,116 +180,313 @@
             border: 0;
         }
 
+        /* ส่วนเนื้อหาภายในคอร์ส */
         .video-info {
-            padding: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .ep-tag {
+            color: var(--primary-neon);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .video-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.4;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            font-weight: 600;
+            height: 3.36rem; /* คุมความสูงหัวข้อให้เท่ากัน */
         }
 
-        .video-info p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .btn-playlist {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #2e7d32;
-            color: white;
+        /* ปุ่มกดดีไซน์พรีเมียม */
+        .btn-watch {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: background-color 0.2s;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
-        .btn-playlist:hover {
-            background-color: #1b5e20;
+        .video-card:hover .btn-watch {
+            background: linear-gradient(135deg, #00e676, #00c853);
+            color: #000;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
         }
 
+        /* ส่วนล่างเพจ (Footer) */
         footer {
+            background: #070a0f;
+            padding: 40px 20px;
             text-align: center;
-            padding: 30px;
-            background-color: #222;
-            color: #bbb;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
             font-size: 0.9rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: none; /* เอาออกถ้าต้องการให้อยู่ท้ายเพจแบบธรรมดา */
         }
-        
+
+        footer i {
+            color: #ff1744;
+            margin: 0 4px;
+        }
+
+        /* รองรับขนาดหน้าจอมือถือ */
         @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            .container { margin: 20px auto; }
+            .hero-section { padding: 80px 20px 60px 20px; }
+            .hero-section h1 { font-size: 2.2rem; }
+            .hero-section p { font-size: 1rem; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .video-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>คลังสื่อการสอนชีววิทยา</h1>
-        <p>รวบรวมวิดีโอบทเรียนออนไลน์ เข้าใจง่าย ทบทวนได้ทุกที่ทุกเวลา</p>
+    <!-- ส่วนหัวอลังการ (Hero Section) -->
+    <header class="hero-section">
+        <div class="hero-badge">
+            <i class="fa-solid fa-graduation-cap"></i> Online Learning Platform
+        </div>
+        <h1>คลังสื่อการสอนชีววิทยา ม.6</h1>
+        <p>ศูนย์รวมบทเรียนชีววิทยาดิจิทัลระดับพรีเมียม ภาคเรียนที่ 1 พัฒนาเนื้อหาเพื่อเสริมสร้างการเรียนรู้ยุคใหม่ เข้าใจลึกซึ้งได้ทุกที่ทุกเวลา</p>
     </header>
 
+    <!-- พื้นที่แสดงรายชื่อวิดีโอ -->
     <div class="container">
+        
+        <div class="section-header">
+            <h2 class="section-title"><i class="fa-solid fa-dna"></i> บทเรียนชีววิทยา ม.6 (ภาคเรียนที่ 1)</h2>
+            <span class="video-count"><i class="fa-solid fa-clapperboard"></i> ทั้งหมด 14 บทเรียน</span>
+        </div>
+        
+        <div class="video-grid">
 
-        <!-- Section: ชีววิทยา ม.6 -->
-        <section class="playlist-section">
-            <h2 class="playlist-title">VDO การสอนชีววิทยา ม. 6</h2>
-            <div class="video-grid">
-                
-                <!-- วิดีโอหลัก/เพลย์ลิสต์ฝังแบบกลุ่ม -->
-                <div class="video-card">
-                    <div class="video-container">
-                        <!-- ใช้พารามิเตอร์ listType=playlist และ list=ID เพื่อดึงทั้งเพลย์ลิสต์มาแสดง -->
-                        <iframe src="https://www.youtube.com/embed?videoseries&list=PLf8I2SNTK0HWSkOy2M-npXcUQxPfot1CO" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>รวมบทเรียน ชีววิทยา ม.6 ภาคเรียนที่ 1</h3>
-                        <p>คลิกไอคอนเพลย์ลิสต์ที่มุมขวาบนของวิดีโอเพื่อเลือกดูคลิปทั้งหมดในชุดการสอนนี้</p>
-                        <a href="https://www.youtube.com/playlist?list=PLf8I2SNTK0HWSkOy2M-npXcUQxPfot1CO" target="_blank" class="btn-playlist">เปิดดูบน YouTube</a>
-                    </div>
+            <!-- EP 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Nclti0ZlTqM" allowfullscreen></iframe>
                 </div>
-
-            </div>
-        </section>
-
-        <!-- Section: ชีววิทยาเข้มข้น ม.4 -->
-        <section class="playlist-section">
-            <h2 class="playlist-title">VDO การสอนชีววิทยาเข้มข้น ม.4 ภาคเรียนที่ 1</h2>
-            <div class="video-grid">
-                
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed?videoseries&list=PLf8I2SNTK0HUsxznIhn3OZ_Bqtf4Y2yHy" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>รวมบทเรียน ชีววิทยาเข้มข้น ม.4 ภาคเรียนที่ 1</h3>
-                        <p>คลิกไอคอนเพลย์ลิสต์ที่มุมขวาบนของวิดีโอเพื่อเลือกดูคลิปทั้งหมดในชุดการสอนนี้</p>
-                        <a href="https://www.youtube.com/playlist?list=PLf8I2SNTK0HUsxznIhn3OZ_Bqtf4Y2yHy" target="_blank" class="btn-playlist">เปิดดูบน YouTube</a>
-                    </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 01</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 1</h3>
+                    <a href="https://youtu.be/Nclti0ZlTqM" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-
             </div>
-        </section>
 
+            <!-- EP 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/kXfqU2PpQzc" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 02</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 2</h3>
+                    <a href="https://youtu.be/kXfqU2PpQzc" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Yd75INrq7Wo" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 03</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 3</h3>
+                    <a href="https://youtu.be/Yd75INrq7Wo" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 4 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/c7POhO6T4Qc" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 04</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 4</h3>
+                    <a href="https://youtu.be/c7POhO6T4Qc" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 5 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/4ELF7n64P5k" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 05</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 5</h3>
+                    <a href="https://youtu.be/4ELF7n64P5k" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 6 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gqymROT2eFU" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 06</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 6</h3>
+                    <a href="https://youtu.be/gqymROT2eFU" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 7 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/0JIKPPpV9WU" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 07</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 7</h3>
+                    <a href="https://youtu.be/0JIKPPpV9WU" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 8 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/pcZoHL_-6Ho" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 08</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 8</h3>
+                    <a href="https://youtu.be/pcZoHL_-6Ho" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 9 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FZ3_XbmNQmQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 09</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 9</h3>
+                    <a href="https://youtu.be/FZ3_XbmNQmQ" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 10 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/0vhXogdLsVk" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 10</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 10</h3>
+                    <a href="https://youtu.be/0vhXogdLsVk" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 11 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ebov09Z8xcg" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 11</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 11</h3>
+                    <a href="https://youtu.be/Ebov09Z8xcg" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 12 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/PRDm4utWdo4" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 12</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 12</h3>
+                    <a href="https://youtu.be/PRDm4utWdo4" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 13 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/S3bhWBzaCmA" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 13</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 13</h3>
+                    <a href="https://youtu.be/S3bhWBzaCmA" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- EP 14 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/vvCV57UN07Q" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <div class="ep-tag"><i class="fa-solid fa-circle-play"></i> Lesson 14</div>
+                    <h3>วิดีโอการสอนชีววิทยา ม.6 — ตอนที่ 14</h3>
+                    <a href="https://youtu.be/vvCV57UN07Q" target="_blank" class="btn-watch">
+                        <span>เข้าสู่บทเรียน</span><i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+    <!-- ส่วนท้ายเว็บไซต์ (Footer) -->
+    <footer>
+        <p>Made with <i class="fa-solid fa-heart"></i> for Students | © 2026 Kru Bio 101. Platform powered by GitHub Pages</p>
+    </footer>
 
 </body>
 </html>
