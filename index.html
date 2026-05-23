@@ -33,7 +33,6 @@
             overflow-x: hidden; 
         }
         
-        /* ฉากหลังออร่าเรืองแสง (Glow Effekt) */
         body::before {
             content: '';
             position: fixed;
@@ -46,7 +45,7 @@
             pointer-events: none;
         }
 
-        /* 🌐 Nav Menu Bar ระดับพรีเมียม */
+        /* 🌐 Nav Menu Bar */
         nav { 
             position: fixed; 
             top: 0; 
@@ -101,7 +100,7 @@
             box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
         }
 
-        /* ส่วนหัวอันยิ่งใหญ่ (Hero Section) */
+        /* Hero Section */
         .hero { 
             text-align: center; 
             padding: 100px 20px; 
@@ -140,16 +139,16 @@
             line-height: 1.8;
         }
 
-        /* ศูนย์กลางทางเข้าสู่บทเรียน (Menu Hub Grid) */
+        /* ศูนย์กลางทางเข้าสู่บทเรียน (ปรับการแสดงผลเหลือ 2 คอลัมน์เด่นๆ) */
         .hub-container { 
-            max-width: 1300px; 
+            max-width: 1100px; 
             margin: 60px auto; 
             padding: 0 20px; 
         }
         
         .hub-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
             gap: 35px; 
         }
         
@@ -159,7 +158,7 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border); 
             border-radius: 24px; 
-            padding: 45px 35px; 
+            padding: 50px 35px; 
             text-align: center; 
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
             text-decoration: none; 
@@ -168,11 +167,10 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            position: relative;
         }
         
         .hub-card i { 
-            font-size: 3.8rem; 
+            font-size: 4rem; 
             margin-bottom: 25px; 
             background: var(--neon-gradient); 
             -webkit-background-clip: text; 
@@ -181,19 +179,17 @@
         }
         
         .hub-card h2 { 
-            font-size: 1.5rem; 
+            font-size: 1.6rem; 
             margin-bottom: 15px; 
             font-weight: 600; 
-            letter-spacing: -0.5px;
         }
         
         .hub-card p { 
             color: #94a3b8; 
-            font-size: 0.95rem; 
+            font-size: 1rem; 
             line-height: 1.6;
         }
         
-        /* เอฟเฟกต์เรืองแสงและยกตัวเมื่อเลื่อนเมาส์ผ่านปุ่ม */
         .hub-card:hover { 
             transform: translateY(-12px); 
             border-color: rgba(0, 255, 136, 0.4); 
@@ -205,7 +201,6 @@
             filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)); 
         }
 
-        /* ส่วนล่างสุดของเพจ (Footer) */
         footer { 
             background: #03050a; 
             padding: 40px 20px; 
@@ -216,76 +211,60 @@
             border-top: 1px solid var(--glass-border); 
         }
         
-        footer i {
-            color: var(--bio-green);
-            margin: 0 5px;
-        }
+        footer i { color: var(--bio-green); margin: 0 5px; }
 
-        /* ระบบ Responsive ปรับขนาดบนมือถือ */
         @media(max-width: 992px) {
             nav { padding: 0 20px; }
             nav .nav-links a { padding: 8px 12px; font-size: 0.9rem; }
         }
         
         @media(max-width: 768px){ 
-            nav .nav-links { display: none; } /* ซ่อนเมนูล้นบนมือถือ เพื่อให้กดผ่านการ์ดตรงกลางได้สะดวก */
+            nav .nav-links { display: none; } 
             .hero h1 { font-size: 2.4rem; } 
-            .hero p { font-size: 1rem; }
             .hub-grid { grid-template-columns: 1fr; gap: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- แถบเมนูด้านบน (ลิงก์ไปยังเพจต่างๆ ตรวจสอบตัวพิมพ์เล็กเรียบร้อย) -->
+    <!-- แถบเมนูด้านบน (ตัดปุ่ม Biography ออกแล้ว) -->
     <nav>
         <div class="logo"><i class="fa-solid fa-dna"></i> KRUBIO 101</div>
         <ul class="nav-links">
             <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> หน้าหลัก</a></li>
             <li><a href="m6.html"><i class="fa-solid fa-seedling"></i> ชีววิทยา ม.6</a></li>
             <li><a href="m4.html"><i class="fa-solid fa-microscope"></i> ชีววิทยา ม.4</a></li>
-            <li><a href="biography.html"><i class="fa-solid fa-user-graduate"></i> Biography</a></li>
         </ul>
     </nav>
 
-    <!-- ส่วนหัวต้อนรับผู้เข้าชมแพลตฟอร์ม -->
     <header class="hero">
         <div class="hero-badge">
-            <i class="fa-solid fa-atom"></i> Welcome to E-Learning Space
+            <i class="fa-solid fa-atom"></i> E-Learning Space
         </div>
         <h1>KRU BIO 101</h1>
         <p>ศูนย์รวมนวัตกรรมการเรียนรู้ สื่อการสอนพาวเวอร์พอยต์ และคลังวิดีโอดิจิทัลสร้างสรรค์ วิชาชีววิทยา ออกแบบและเรียบเรียงโดย ครูภควัต สองเมือง</p>
     </header>
 
-    <!-- โซนปุ่มกด Mega-Card ลิงก์เชื่อมโยงไปยังหน้าเพจ 2, 3, 4 -->
     <main class="hub-container">
         <div class="hub-grid">
             
-            <!-- ลิงก์ไปยัง Page 2 (ม.6) -->
+            <!-- ทางเข้าหน้า ม.6 -->
             <a href="m6.html" class="hub-card">
                 <i class="fa-solid fa-seedling"></i>
                 <h2>ชีววิทยา ม.6</h2>
                 <p>ศูนย์รวมวิดีโอการสอนประจำภาคเรียนที่ 1 ครบทั้ง 14 ตอน พร้อมคลังดาวน์โหลดใบความรู้ และสื่อ PowerPoint ครบทุกหัวข้อบทเรียน</p>
             </a>
 
-            <!-- ลิงก์ไปยัง Page 3 (ม.4) -->
+            <!-- ทางเข้าหน้า ม.4 -->
             <a href="m4.html" class="hub-card">
                 <i class="fa-solid fa-microscope"></i>
                 <h2>ชีววิทยาเข้มข้น ม.4</h2>
                 <p>คอร์สเรียนออนไลน์ปรับพื้นฐานชีววิทยาระดับชั้นมัธยมศึกษาปีที่ 4 ภาคเรียนที่ 1 ในรูปแบบชุดเครื่องเล่นเพลย์ลิสต์ดิจิทัล</p>
             </a>
-
-            <!-- ลิงก์ไปยัง Page 4 (Biography) -->
-            <a href="biography.html" class="hub-card">
-                <i class="fa-solid fa-user-graduate"></i>
-                <h2>My Biography</h2>
-                <p>ประวัติการศึกษา ประวัติการทำงาน ผลงานวิจัยนวัตกรรมในชั้นเรียน และคลังสะสมผลงานความสำเร็จทั้งหมดของครูภควัต</p>
-            </a>
             
         </div>
     </main>
 
-    <!-- ส่วนท้ายแสดงลิขสิทธิ์ -->
     <footer>
         <p>พัฒนาด้วย <i class="fa-solid fa-code"></i> เพื่อการเรียนรู้ยุคดิจิทัล | © 2026 ครูภควัต สองเมือง. Powered by GitHub Pages</p>
     </footer>
