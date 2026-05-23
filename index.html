@@ -4,83 +4,290 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kru Bio 101 | คลังสื่อดิจิทัลครูภควัต</title>
+    <!-- ดึงคลังไอคอนและฟอนต์ระดับพรีเมียม -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-dark: #050811; --glass-card: rgba(13, 22, 42, 0.6); --glass-border: rgba(255, 255, 255, 0.06); --bio-green: #00ff88; --tech-blue: #00e5ff; --text-white: #f8fafc; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Prompt', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-white); padding-top: 80px; position: relative; overflow-x: hidden; }
+        :root { 
+            --bg-dark: #050811; 
+            --glass-card: rgba(13, 22, 42, 0.6); 
+            --glass-border: rgba(255, 255, 255, 0.06); 
+            --bio-green: #00ff88; 
+            --tech-blue: #00e5ff; 
+            --text-white: #f8fafc; 
+            --neon-gradient: linear-gradient(135deg, var(--bio-green), var(--tech-blue));
+        }
         
-        /* 🌐 Nav Menu Bar */
-        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(5, 8, 17, 0.75); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; }
-        nav .logo { font-family: 'Chakra Petch', sans-serif; font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--bio-green), var(--tech-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        nav .nav-links { display: flex; gap: 20px; list-style: none; }
-        nav .nav-links a { color: var(--text-white); text-decoration: none; font-weight: 400; padding: 8px 16px; border-radius: 8px; transition: 0.3s; }
-        nav .nav-links a:hover, nav .nav-links a.active { background: rgba(0, 255, 136, 0.1); color: var(--bio-green); }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Prompt', sans-serif; 
+        }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-white); 
+            padding-top: 80px; 
+            position: relative; 
+            overflow-x: hidden; 
+        }
+        
+        /* ฉากหลังออร่าเรืองแสง (Glow Effekt) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-        /* Hero */
-        .hero { text-align: center; padding: 80px 20px; background: radial-gradient(rgba(5, 8, 17, 0.9), var(--bg-dark)), url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1920') no-repeat center/cover; border-bottom: 1px solid var(--glass-border); }
-        .hero h1 { font-size: 3rem; font-weight: 700; background: linear-gradient(to right, #fff, var(--bio-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
-        .hero p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        /* 🌐 Nav Menu Bar ระดับพรีเมียม */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 80px; 
+            background: rgba(5, 8, 17, 0.75); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px); 
+            border-bottom: 1px solid var(--glass-border); 
+            z-index: 1000; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 50px; 
+        }
+        
+        nav .logo { 
+            font-family: 'Chakra Petch', sans-serif; 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            background: var(--neon-gradient); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        nav .nav-links { 
+            display: flex; 
+            gap: 15px; 
+            list-style: none; 
+        }
+        
+        nav .nav-links a { 
+            color: var(--text-white); 
+            text-decoration: none; 
+            font-weight: 400; 
+            font-size: 0.95rem;
+            padding: 10px 18px; 
+            border-radius: 10px; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav .nav-links a:hover, nav .nav-links a.active { 
+            background: rgba(0, 255, 136, 0.08); 
+            color: var(--bio-green); 
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+        }
 
-        /* Menu Hub Grid */
-        .hub-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .hub-card { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; text-align: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .hub-card i { font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(135deg, var(--bio-green), var(--tech-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: 0.3s; }
-        .hub-card h2 { font-size: 1.4rem; margin-bottom: 12px; font-weight: 600; }
-        .hub-card p { color: #94a3b8; font-size: 0.95rem; }
-        .hub-card:hover { transform: translateY(-10px); border-color: var(--bio-green); box-shadow: 0 15px 35px rgba(0, 255, 136, 0.15); }
-        .hub-card:hover i { transform: scale(1.1) rotate(5deg); filter: drop-shadow(0 0 10px var(--bio-green)); }
+        /* ส่วนหัวอันยิ่งใหญ่ (Hero Section) */
+        .hero { 
+            text-align: center; 
+            padding: 100px 20px; 
+            background: radial-gradient(rgba(5, 8, 17, 0.85), var(--bg-dark)), url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1920') no-repeat center/cover; 
+            border-bottom: 1px solid var(--glass-border); 
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            color: var(--bio-green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
 
-        footer { background: #03050a; padding: 30px; text-align: center; color: #475569; font-size: 0.9rem; margin-top: 100px; border-top: 1px solid var(--glass-border); }
-        @media(max-width: 768px){ nav { padding: 0 20px; } nav .nav-links { display: none; } .hero h1 { font-size: 2.2rem; } }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            font-family: 'Chakra Petch', sans-serif;
+            background: linear-gradient(to right, #ffffff, #e2e8f0, var(--bio-green)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin-bottom: 15px; 
+        }
+        
+        .hero p { 
+            color: #94a3b8; 
+            font-size: 1.15rem; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            line-height: 1.8;
+        }
+
+        /* ศูนย์กลางทางเข้าสู่บทเรียน (Menu Hub Grid) */
+        .hub-container { 
+            max-width: 1300px; 
+            margin: 60px auto; 
+            padding: 0 20px; 
+        }
+        
+        .hub-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 35px; 
+        }
+        
+        .hub-card { 
+            background: var(--glass-card); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); 
+            border-radius: 24px; 
+            padding: 45px 35px; 
+            text-align: center; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            text-decoration: none; 
+            color: #fff; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative;
+        }
+        
+        .hub-card i { 
+            font-size: 3.8rem; 
+            margin-bottom: 25px; 
+            background: var(--neon-gradient); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            transition: 0.3s ease; 
+        }
+        
+        .hub-card h2 { 
+            font-size: 1.5rem; 
+            margin-bottom: 15px; 
+            font-weight: 600; 
+            letter-spacing: -0.5px;
+        }
+        
+        .hub-card p { 
+            color: #94a3b8; 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+        }
+        
+        /* เอฟเฟกต์เรืองแสงและยกตัวเมื่อเลื่อนเมาส์ผ่านปุ่ม */
+        .hub-card:hover { 
+            transform: translateY(-12px); 
+            border-color: rgba(0, 255, 136, 0.4); 
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15); 
+        }
+        
+        .hub-card:hover i { 
+            transform: scale(1.1) rotate(3deg); 
+            filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.6)); 
+        }
+
+        /* ส่วนล่างสุดของเพจ (Footer) */
+        footer { 
+            background: #03050a; 
+            padding: 40px 20px; 
+            text-align: center; 
+            color: #64748b; 
+            font-size: 0.95rem; 
+            margin-top: 120px; 
+            border-top: 1px solid var(--glass-border); 
+        }
+        
+        footer i {
+            color: var(--bio-green);
+            margin: 0 5px;
+        }
+
+        /* ระบบ Responsive ปรับขนาดบนมือถือ */
+        @media(max-width: 992px) {
+            nav { padding: 0 20px; }
+            nav .nav-links a { padding: 8px 12px; font-size: 0.9rem; }
+        }
+        
+        @media(max-width: 768px){ 
+            nav .nav-links { display: none; } /* ซ่อนเมนูล้นบนมือถือ เพื่อให้กดผ่านการ์ดตรงกลางได้สะดวก */
+            .hero h1 { font-size: 2.4rem; } 
+            .hero p { font-size: 1rem; }
+            .hub-grid { grid-template-columns: 1fr; gap: 25px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- แถบเมนูด้านบน (ลิงก์ไปยังเพจต่างๆ ตรวจสอบตัวพิมพ์เล็กเรียบร้อย) -->
     <nav>
         <div class="logo"><i class="fa-solid fa-dna"></i> KRUBIO 101</div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">หน้าหลัก</a></li>
-            <li><a href="m6.html">ชีววิทยา ม.6</a></li>
-            <li><a href="m4.html">ชีววิทยา ม.4</a></li>
-            <li><a href="biography.html">Biography</a></li>
+            <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> หน้าหลัก</a></li>
+            <li><a href="m6.html"><i class="fa-solid fa-seedling"></i> ชีววิทยา ม.6</a></li>
+            <li><a href="m4.html"><i class="fa-solid fa-microscope"></i> ชีววิทยา ม.4</a></li>
+            <li><a href="biography.html"><i class="fa-solid fa-user-graduate"></i> Biography</a></li>
         </ul>
     </nav>
 
+    <!-- ส่วนหัวต้อนรับผู้เข้าชมแพลตฟอร์ม -->
     <header class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-atom"></i> Welcome to E-Learning Space
+        </div>
         <h1>KRU BIO 101</h1>
-        <p>ศูนย์รวมนวัตกรรมการเรียนรู้และสื่อดิจิทัลสร้างสรรค์ วิชาชีววิทยา โดยครูภควัต สองเมือง</p>
+        <p>ศูนย์รวมนวัตกรรมการเรียนรู้ สื่อการสอนพาวเวอร์พอยต์ และคลังวิดีโอดิจิทัลสร้างสรรค์ วิชาชีววิทยา ออกแบบและเรียบเรียงโดย ครูภควัต สองเมือง</p>
     </header>
 
+    <!-- โซนปุ่มกด Mega-Card ลิงก์เชื่อมโยงไปยังหน้าเพจ 2, 3, 4 -->
     <main class="hub-container">
         <div class="hub-grid">
-            <!-- Link to Page 2 -->
+            
+            <!-- ลิงก์ไปยัง Page 2 (ม.6) -->
             <a href="m6.html" class="hub-card">
                 <i class="fa-solid fa-seedling"></i>
                 <h2>ชีววิทยา ม.6</h2>
-                <p>รวมสื่อ VDO การสอนภาคเรียนที่ 1 และเอกสาร PowerPoint / ใบความรู้ครบทุกบทบท</p>
+                <p>ศูนย์รวมวิดีโอการสอนประจำภาคเรียนที่ 1 ครบทั้ง 14 ตอน พร้อมคลังดาวน์โหลดใบความรู้ และสื่อ PowerPoint ครบทุกหัวข้อบทเรียน</p>
             </a>
 
-            <!-- Link to Page 3 -->
+            <!-- ลิงก์ไปยัง Page 3 (ม.4) -->
             <a href="m4.html" class="hub-card">
                 <i class="fa-solid fa-microscope"></i>
                 <h2>ชีววิทยาเข้มข้น ม.4</h2>
-                <p>คอร์สเรียนปรับพื้นฐานชีววิทยา ม.ปลาย ภาคเรียนที่ 1 รูปแบบกลุ่มวิดีโอออนไลน์</p>
+                <p>คอร์สเรียนออนไลน์ปรับพื้นฐานชีววิทยาระดับชั้นมัธยมศึกษาปีที่ 4 ภาคเรียนที่ 1 ในรูปแบบชุดเครื่องเล่นเพลย์ลิสต์ดิจิทัล</p>
             </a>
 
-            <!-- Link to Page 4 -->
+            <!-- ลิงก์ไปยัง Page 4 (Biography) -->
             <a href="biography.html" class="hub-card">
                 <i class="fa-solid fa-user-graduate"></i>
                 <h2>My Biography</h2>
-                <p>ประวัติการศึกษา ผลงานวิจัยในชั้นเรียน และนวัตกรรมการศึกษาของครูภควัต</p>
+                <p>ประวัติการศึกษา ประวัติการทำงาน ผลงานวิจัยนวัตกรรมในชั้นเรียน และคลังสะสมผลงานความสำเร็จทั้งหมดของครูภควัต</p>
             </a>
+            
         </div>
     </main>
 
+    <!-- ส่วนท้ายแสดงลิขสิทธิ์ -->
     <footer>
-        <p>© 2026 Kru Bio 101. Powered by GitHub Pages</p>
+        <p>พัฒนาด้วย <i class="fa-solid fa-code"></i> เพื่อการเรียนรู้ยุคดิจิทัล | © 2026 ครูภควัต สองเมือง. Powered by GitHub Pages</p>
     </footer>
 
 </body>
